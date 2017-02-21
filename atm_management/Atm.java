@@ -8,7 +8,7 @@ public class Atm {
 
   public Atm(int cash, int maxwd, String location) {
     this.cash = cash;
-    this.maxwd = maxwd;
+    this.maxwd = 250;
     this.location = location;
   }
 
@@ -20,16 +20,16 @@ public class Atm {
     return this.cash;
   }
 
-  public int getMaxWd() {
-    return this.maxwd;
+  public boolean isWithinLimit(int cash) {
+    return cash <= this.maxwd;
   }
 
-  public void payOut(int cash) {
-    this.cash -= cash;
-
-}
-
-  // public int fillUp() {
-
-  // }
+  public int payOut(int cash) {
+    if (isWithinLimit(cash) && this.cash >= cash) {
+      this.cash -= cash;
+      return cash;
+    } else {
+      return 0;
+    }
+} 
 }

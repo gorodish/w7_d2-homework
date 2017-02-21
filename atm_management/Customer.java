@@ -22,4 +22,8 @@ public class Customer {
     this.wallet -= cash;
     atm.payOut(cash);
   }
+
+  public int setLimit() {
+    return 250;
+  }
 }

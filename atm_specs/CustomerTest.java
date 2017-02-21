@@ -23,6 +23,6 @@ public class CustomerTest {
     customer1.withdrawCash(100, atm1);
     assertEquals(900, customer1.getWallet());
     assertEquals(900, atm1.getCash());
-
    }
+
 }

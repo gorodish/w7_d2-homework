@@ -23,6 +23,16 @@ public class AtmTest {
 
    @Test
    public void atmHasMaxWd() {
-    assertEquals(250, atm1.getMaxWd());
+    assertEquals(true, atm1.isWithinLimit(200));
+    assertEquals(false, atm1.isWithinLimit(300));
    }
+
+   @Test
+   public void canDispense() {
+    atm1.payOut(250);
+    atm1.payOut(250);
+    atm1.payOut(250);
+    assertEquals(250, atm1.getCash());
+
+    }
 }
